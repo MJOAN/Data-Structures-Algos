@@ -4,6 +4,32 @@ ALGORITHMS
 
 
 /*
+Binary
+t:  s:  
+*/
+
+const binary = (a, key) => {
+let low = 0;
+let high = a.length - 1;
+    while (low <= high) {
+    let mid = low + Math.floor((high - low) / 2);
+        if (a[mid] === key) return mid;
+
+        if (key < a[mid]) {
+        high = mid - 1;
+        } else {
+        low = mid + 1;
+        }
+    }     
+ return -1;
+};
+  
+let a = [10, 20, 47, 59, 63, 75, 88, 99, 107, 120, 133, 155, 162, 176, 188, 199, 200, 210, 222];
+console.log(binary(a, 63));
+  
+
+
+/*
 Bubble
 t:  s:  
 */
@@ -105,3 +131,76 @@ PART III:
   sort(array, i, j-1)
   sort(array, j+1, j)
 */ 
+
+
+/*
+Selection 
+t:  s:  
+*/
+
+const selection = (a) => {
+    let len = a.length;
+        for(let i = 0; i < len; i++) {
+            let min = i
+            for(let j = i + 1; j < len; j++)
+                if(a[j] <= a[min]) {
+                    min = j
+                }
+                if(min !== i) {
+                    let temp = a[min]
+                    a[min] = a[i]
+                    a[i] = temp
+                }
+            }
+        return a;
+    }
+    
+    a = [98, 45, 34, 23, 12, 33, 87, 99, 65, 37]  
+    console.log(selection(a));
+    // [ 12, 23, 33, 34, 37, 45, 65, 87, 98, 99 ]
+
+
+
+
+/*
+Heap 
+t:  s:  
+*/
+
+
+const heapify = (a, i) => {
+    var left = 2 * i + 1;
+    var right = 2 * i + 2;
+    var max = i;
+  
+    if (left < len && a[left] > a[max])	max = left;
+    if (right < len && a[right] > a[max]) max = right;
+    
+      if (max != i) {
+          swap(a, i, max);
+          heapify(a, max);
+    }
+      return a;
+  }
+  
+  const swap = (a, first, last) => {
+    var temp = a[first];
+    a[first] = a[last];
+    a[last] = temp;
+  }
+  
+  const heapsort = (a) => {
+    len = a.length;
+    for (var i = Math.floor(len / 2); i >= 0; i--) {
+        heapify(a, i);
+    }
+    for (var i = len - 1; i > 0; i--) {
+          swap(a, 0, i);
+          len--;
+          heapify(a, 0);
+    }
+      return a;
+  }
+  
+  var arr = [23, -3, 34, -35, -1, 465, 1, 34, 6, 231, 56, 67, 98, 43, 3, 564]
+  console.log(heapsort(arr));
