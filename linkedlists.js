@@ -1,6 +1,9 @@
 /*
-Linked Lists
-t:  s: 
+Singly Linked List
+      Average                           Worst
+   	  Access Search Insertion Deletion	Access Search Insertion Delete
+Time: Θ(n)	  Θ(n)	 Θ(1)	   Θ(1)		O(n)   O(n)	  O(1)	    O(1)	
+Space: O(n)
 */
 
 class Node {
@@ -12,19 +15,40 @@ class Node {
 
 class LinkedList {
 	constructor(data) {
+		this.tail = null;
 		this.head = null;
 		this.size = 0;
 	}
 	add(data) {
-		let node = new Node(data);
 		if(!this.head) {
 			this.head = node;
 			this.tail = node;
 		} else{ 
-			this.tail.next = node;
+			this.tail.next = null;
 			this.tail = node;
 		}
 		this.size++;
+	}
+	insertAt(index) {
+		if(!this.head) {
+			return null;
+		}
+		if(index === 0) {
+			this.head = new Node(data, this.head)
+		}
+		const prev = this.getAt(index-1); 
+		const curr = new Node(data, prev.next)
+		prev.next = curr;
+	}
+	insertLast(data) {
+		const last = this.getLast()
+
+		if(last) {
+			last.next = new Node(data)
+		} else {
+			this.head = new Node(data)
+		}
+		this.length++;
 	}
 	remove(data) {
 		let prev = this.head;
@@ -117,27 +141,6 @@ class LinkedList {
 		}
 		prev.next = null;
 		this.length--
-	}
-	insertLast(data) {
-		const last = this.getLast()
-
-		if(last) {
-			last.next = new Node(dat)
-		} else {
-			this.head = new Node(data)
-		}
-		this.length++;
-	}
-	insertAt(index) {
-		if(!this.head) {
-			return null;
-		}
-		if(index === 0) {
-			this.head = new Node(data, this.head)
-		}
-		const prev = this.getAt(index-1); 
-		const curr = new Node(data, prev.next)
-		prev.next = curr;
 	}
 	removeIndex(index) {
 		if(!this.head) {
