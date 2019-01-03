@@ -60,23 +60,113 @@ class LinkedList {
 			prev = node;
 		}
 	}
-	//getIndex easy
-	//getSize
-	//getFirst
-	//getLast
-	//removeFirst
-	//removeLast
+	getIndex(index) {
+		let count = 0
+		let curr = this.head;
+		while(curr) {
+			if(counter === index) return curr;
+			counter++;
+			curr = curr.next
+		}
+		return null;	
+	}
+	size() {
+		let counter = 0; 
+		let node = this.head;
+		while(node) {
+			counter++
+			node = node.next;
+		}
+		return counter;
+	}
+	getFirst() {
+		return this.head;
+	}
+	getLast() {
+		if(!this.head) {
+			return null;
+		}
+		let node = node.next;
+		while(node) {	
+			if(!node.next) {
+				return node;
+			}
+			node = node.next;
+		}
+	}
+	removeFirst() {
+		if(!this.head) {
+			return;
+		}
+		this.head = this.head.next;
+		this.length--;
+	}
+	removeLast() {
+		if(!this.head) {
+			return;
+		}
+		if(!this.head.next) {
+			this.head = null;
+			return;
+		}
+		let prev = this.head;
+		let curr = this.head.next;
+		while(curr.next) {
+			prev = curr;
+			curr = curr.next;
+		}
+		prev.next = null;
+		this.length--
+	}
+	insertLast(data) {
+		const last = this.getLast()
 
+		if(last) {
+			last.next = new Node(dat)
+		} else {
+			this.head = new Node(data)
+		}
+		this.length++;
+	}
+	insertAt(index) {
+		if(!this.head) {
+			return null;
+		}
+		if(index === 0) {
+			this.head = new Node(data, this.head)
+		}
+		const prev = this.getAt(index-1); 
+		const curr = new Node(data, prev.next)
+		prev.next = curr;
+	}
+	removeIndex(index) {
+		if(!this.head) {
+			return null;
+		}
+		if(index === 0) {
+			this.head = this.head.next;
+			return;
+		}
+	const prev = this.getIndex(index-1);
+	if(!prev || !prev.next) {
+		return;
+	} 
+	prev.next = prev.next.next;
+	}
+	clear() {
+		this.head = null;
+	}
 }
 
-var list = new LinkedList()
-list.add("A!")
-list.add("B")
-list.add("C")
+let list = new LinkedList()
+list.add("concurrent")
+list.add("logic")
+list.add("embedded_software")
+list.add('binary')
+list.add('operating_system')
+list.add('multiprocessing')
+list.add('central_processing_unit')
+list.add("address_bus")
 console.log(list)
-console.log('******add****')
-console.log('**********')
-console.log('**********')
-list.remove("B")
-console.log('******remove****')
+list.remove("logic")
 console.log(list)
