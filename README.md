@@ -1,5 +1,4 @@
 # Data Structures and Algorithms Study Guide
-#### ** completed in 2018 with cited references
 
 ### Part I: Big O
 
