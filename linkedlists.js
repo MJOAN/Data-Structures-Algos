@@ -1,9 +1,20 @@
 /*
+  Authorship: Credit for the code in this file goes to Colt Steele,
+  author of https://www.udemy.com/js-algorithms-and-data-structures-masterclass/ 
+  and my tutor, Kirsten Brown. I studied these algorithms on my own, and found 
+  the logic for each noted below was what made most sense to me. I am
+  working on pseudo code section to confirm my understanding.
+*/
+
+
+/*
 Singly Linked List
       Average                           Worst
    	  Access Search Insertion Deletion	Access Search Insertion Delete
 Time: Θ(n)	  Θ(n)	 Θ(1)	   Θ(1)		O(n)   O(n)	  O(1)	    O(1)	
 Space: O(n)
+Pseudo: 
+
 */
 
 class Node {
