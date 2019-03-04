@@ -1,9 +1,32 @@
+
+/*
+  Authorship: Credit for the code in this file goes to Colt Steele,
+  author of https://www.udemy.com/js-algorithms-and-data-structures-masterclass/ 
+  and my tutor, Kirsten Brown. I studied these algorithms on my own, and found 
+  the logic for each noted below was what made most sense to me. I have
+  written a pseudo code section to confirm my understanding.
+*/
+
+
 /*
 Hash Table
       Average                           Worst
    	  Access Search Insertion Deletion	Access Search Insertion Delete
 Time: N/A	 Θ(1)	Θ(1)	  Θ(1)	    N/A	   O(n)	  O(n)	    O(n)		
 Space: O(n)
+Pseudo: Setup HashTable class in JavaScript with constructor initiating size, 
+and set up new array called keyMap referencing this size. Initiate new functions 
+under HashTable class. Hash function takes in key, and length of array. Set up 
+total and prime variables for better probability. Iterate or loop through key 
+length, set char variable to value at i, set value variable to charCode() - 96, 
+set total variable to total * prime * value all mod length. Return total. 
+Set function takes in value and key, set variable index to result of recursive 
+call to hash function with passed in key. If value at index of keyMap is null, set
+index at keyMap as empty array. else push key, and value to the index in keyMap. 
+Get function takes in key, set index to result of hash function call with key
+passed in. If value at index of keyMap is not null, iterate through this keyMap 
+at index length, and if this value at 0 is equal to our key, return the 1st index of the 
+keyMap at the current index.
 */
 
 class HashTable {
