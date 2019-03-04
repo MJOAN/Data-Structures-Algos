@@ -22,3 +22,4 @@
 ### Part IV: Approaches
 
 
+### Credit for code samples and inspiration to continue on this journey is noted in each file. I've written pseudo code for each to confirm my understanding, which continues to grow.
