@@ -22,9 +22,9 @@ length, set char variable to value at i, set value variable to charCode() - 96,
 set total variable to total * prime * value all mod length. Return total. 
 Set function takes in value and key, set variable index to result of recursive 
 call to hash function with passed in key. If value at index of keyMap is null, set
-index at keyMap as empty array. else push key, and value to the index in keyMap. 
+index at keyMap as empty array, else push key, and value to the index in keyMap. 
 Get function takes in key, set index to result of hash function call with key
-passed in. If value at index of keyMap is not null, iterate through this keyMap 
+parameter passed in. If value at index of keyMap is not null, iterate through this keyMap 
 at index length, and if this value at 0 is equal to our key, return the 1st index of the 
 keyMap at the current index.
 */
