@@ -1,4 +1,11 @@
 /*
+  Authorship: Credit for the code in this file goes my tutor, Kirsten Brown. 
+  I studied these algorithms on my own, and found the logic for each noted 
+  below was what made most sense to me.
+*/
+
+
+/*
 Queue 
       Average                           Worst
    	  Access Search Insertion Deletion	Access Search Insertion Delete
