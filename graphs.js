@@ -1,4 +1,13 @@
 /*
+  Authorship: Credit for the code in this file goes to Colt Steele,
+  author of https://www.udemy.com/js-algorithms-and-data-structures-masterclass/ 
+  and my tutor, Kirsten Brown. I studied these algorithms on my own, and found 
+  the logic for each noted below was what made most sense to me. I have
+  written a pseudo code section to confirm my understanding.
+*/
+
+
+/*
 Graphs: Breadth First Traversal & Depth First Traversal
 Time: O(V+E)
 Space: O(V)
