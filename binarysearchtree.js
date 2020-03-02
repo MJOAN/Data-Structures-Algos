@@ -1,3 +1,13 @@
+/*
+ALGORITHMS
+  Authorship: Credit for the code in this file goes to Benoit Vallon,
+  author of blog: http://blog.benoitvallon.com/ and my tutor, 
+  Kirsten Brown. I studied these algorithms on my own, and found 
+  the logic for each noted below was what made most sense to me. I have
+  written a pseudo code section to confirm my understanding.
+*/
+
+
 /**
 Binary Search Tree
       Average                           Worst
